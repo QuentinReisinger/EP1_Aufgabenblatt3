@@ -4,19 +4,33 @@
 public class Aufgabe2 {
 
     private static void addChar(String text, char character) {
-        //TODO: Implementieren Sie hier Ihre Lösung für die Angabe
+        for(int i = 0; i < text.length(); i++) {
+            if(i % 2 == 0 && i != text.length() - 1) {
+                System.out.print(text.charAt(i) + "" + character + character);
+            }
+            else if(i != text.length() - 1) {
+                System.out.print(text.charAt(i) + "" + character);
+            }
+            else {
+                System.out.print(text.charAt(i));
+            }
+        }
+        System.out.println();
     }
 
     private static void addChar(int number, char character) {
-        //TODO: Implementieren Sie hier Ihre Lösung für die Angabe
+        String strNumber = Integer.toString(number);
+        addChar(strNumber, character);
     }
 
     private static void addChar(String text, String characters) {
-        //TODO: Implementieren Sie hier Ihre Lösung für die Angabe
+        for(int i = 0; i < characters.length(); i++) {
+            addChar(text, characters.charAt(i));
+        }
     }
 
     private static void addChar(String text) {
-        //TODO: Implementieren Sie hier Ihre Lösung für die Angabe
+        addChar(text, '=');
     }
 
     public static void main(String[] args) {
