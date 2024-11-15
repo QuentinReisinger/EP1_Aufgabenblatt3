@@ -61,5 +61,6 @@ public class Aufgabe2 {
         addChar(text1);
         addChar(text2);
         addChar(text3);
+
     }
 }
