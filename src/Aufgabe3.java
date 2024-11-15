@@ -4,16 +4,35 @@
 public class Aufgabe3 {
 
     private static void printOddNumbersAscending(int start, int end) {
-        //TODO: Implementieren Sie hier Ihre Lösung für die Methode
+        if(start <= end && start % 2 != 0) {
+            System.out.print(start + " ");
+        }
+        else if(start > end){
+            return;
+        }
+        printOddNumbersAscending(start + 1, end);
     }
 
     private static void printEvenNumbersDescending(int end) {
-        //TODO: Implementieren Sie hier Ihre Lösung für die Methode
+        if(end % 2 == 0 && end >= 0) {
+            System.out.print(end + " ");
+        }
+        else if(end < 0) {
+            return;
+        }
+        printEvenNumbersDescending(end - 1);
     }
 
     private static int countCharChanges(String text) {
-        //TODO: Implementieren Sie hier Ihre Lösung für die Methode
-        return -1; //Zeile kann geändert oder entfernt werden.
+        if(text.length() <= 1) {
+            return 0;
+        }
+        int count = 0;
+        if(text.charAt(0) != text.charAt(1)) {
+            count++;
+        }
+        count += countCharChanges(text.substring(1));
+        return count;
     }
 
     public static void main(String[] args) {
