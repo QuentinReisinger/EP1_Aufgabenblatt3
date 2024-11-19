@@ -4,8 +4,24 @@
 public class Aufgabe5 {
 
     private static String orderCharGroups(String text) {
-        // TODO: Implementieren Sie hier Ihre Lösung für die Methode
-        return ""; //Zeile kann geändert oder entfernt werden.
+        if (text.isEmpty()) {
+            return "";
+        }
+
+        char first = text.charAt(0);
+        String leftoverText = text.substring(1);
+
+        if(leftoverText.isEmpty()) {
+            return "" + first;
+        }
+
+        String sorted = orderCharGroups(leftoverText);
+
+        if(first == sorted.charAt(0)) {
+            return first + sorted;
+        }else{
+            return sorted + first;
+        }
     }
 
     public static void main(String[] args) {
