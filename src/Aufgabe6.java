@@ -10,7 +10,14 @@ public class Aufgabe6 {
 
     private static void drawCirclesRec(CodeDraw myDrawObj, int y, int radius, int num) {
         myDrawObj.setColor(new Color(255 - num * 30, 255 - num * 30, 0));
-        // TODO: Implementieren Sie hier Ihre Lösung für die Methode
+        int x = myDrawObj.getWidth()/2;
+        myDrawObj.fillEllipse(x, y, radius, radius);
+        if(num > 1){
+            drawCirclesRec(myDrawObj, y + radius/2, radius/2, num-1);
+            drawCirclesRec(myDrawObj, y - radius/2, radius/2, num-1);
+        }
+
+
     }
 
     public static void main(String[] args) {
